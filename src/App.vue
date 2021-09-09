@@ -1,10 +1,13 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
+  <img alt="Vue logo" src="./assets/logo.png" :ref="(el) => (someref = el)" />
   <HelloWorld msg="Hello Vue 3 + TypeScript + Vite" />
 </template>
 
 <script lang="ts" setup>
-import HelloWorld from './components/HelloWorld.vue'
+import { Ref, ref } from 'vue';
+import HelloWorld from './components/HelloWorld.vue';
+
+const someref: Ref<HTMLElement | null> = ref(null);
 </script>
 
 <style>
